@@ -1,0 +1,35 @@
+﻿@model ACME.Models.VM.ClienteVM
+@{
+    ViewData["Title"] = "Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container p-2 border">
+    <div class="row pb-2 ">
+        <div class="col">
+            <h1 class="text-primary">Clientes</h1>
+        </div>
+
+        <div class="col  pt-1">
+            <a asp-controller="Cliente" asp-action="CrearCliente" class="btn btn-outline-success"><i class="bi bi-plus-square-fill"></i>    Crear cliente</a>
+        </div>
+    </div>
+
+
+
+    @if (Model.listaDeClientes.Count() != 0)
+    {
+        <div id="contenedorConResultado">
+            <div class="table-responsive"><partial name="_TablaClientes" /></div>
+
+           
+        </div>
+    }
+    else
+    {
+        <h4 class="text-danger text-center">No existen registros.</h4>
+    }
+
+</div>
+

@@ -1,0 +1,62 @@
+﻿@model ACME.Models.VM.ClienteActualizarVM
+@{
+    ViewData["Title"] = "Actualizar cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="d-flex justify-content-center align-items-center mt-md-5 mt-3">
+
+    <form method="post" autocomplete="off" asp-action="ActualizarCliente" class="col-md-4 mx-auto">
+
+        <input hidden asp-for="ClienteActualizarDto.Id" />
+
+        <div class="container-fluid border p-4">
+
+            <div class="mb-5">
+                <h2 class="text-primary">Actualizar cliente</h2>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div> 
+            </div>
+
+            <div class="mb-3 mt-4">
+
+                <div class="form-floating mb-4">
+                    <input asp-for="ClienteActualizarDto.Nombre" class="form-control" style="height: 65px;" placeholder="Nombre de la cliente">
+                    <label for="Nombre" class="form-label text-primary">Nombre de la cliente</label>
+                    <span asp-validation-for="ClienteActualizarDto.Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input asp-for="ClienteActualizarDto.Codigo" class="form-control"  placeholder="Código de la cliente">
+                    <label for="Codigo" class="form-label text-primary">Código de la cliente</label>
+                    <span asp-validation-for="ClienteActualizarDto.Codigo" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input asp-for="ClienteActualizarDto.PaytefAPICompany" class="form-control"  placeholder="Compañía en Paytef">
+                    <label for="PaytefAPICompany" class="form-label text-primary">Compañía en Paytef</label>
+                    <span asp-validation-for="ClienteActualizarDto.PaytefAPICompany" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input asp-for="ClienteActualizarDto.PaytefAPIUsername" class="form-control"  placeholder="Nombre de usuario en Paytef">
+                    <label for="PaytefAPIUsername" class="form-label text-primary">Usuario de Paytef</label>
+                    <span asp-validation-for="ClienteActualizarDto.PaytefAPIUsername" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input asp-for="ClienteActualizarDto.PaytefAPIPassword" class="form-control"  placeholder="Contraseña en Paytef">
+                    <label for="PaytefAPIPassword" class="form-label text-primary">Contraseña en Paytef</label>
+                    <span asp-validation-for="ClienteActualizarDto.PaytefAPIPassword" class="text-danger"></span>
+                </div>
+
+            </div>
+
+
+            <div class="d-grid gap-2  mt-5">
+                <button type="submit" class="btn btn-warning">Actualizar</button>
+                <a asp-controller="Cliente" asp-action="ListadoCliente" class="btn btn-primary">Atrás</a>
+            </div>
+        </div>
+    </form>
+</div>

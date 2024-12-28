@@ -1,0 +1,41 @@
+﻿@model ACME.Models.VM.ClienteEliminarVM
+@{
+    ViewData["Title"] = "Eliminar cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-center align-items-center mt-md-5 mt-3">
+    <form method="post" autocomplete="off" asp-action="EliminarCliente" class="col-md-4 mx-auto">
+
+        <input hidden asp-for="ClienteDto.Id" />
+
+        <div class="container-fluid border p-4">
+
+            <div class="mb-5">
+                <h2 class="text-primary">Eliminar cliente</h2>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div> 
+            </div>
+
+            <div class="mb-3 mt-4">
+                <div class="form-floating mb-4">
+                    <input asp-for="ClienteDto.Nombre" disabled class="form-control"  placeholder="Nombre de la cliente">
+                    <label for="Nombre" class="form-label text-primary">Nombre de la cliente</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input asp-for="ClienteDto.Codigo" disabled class="form-control"  placeholder="Código de la cliente">
+                    <label for="Codigo" class="form-label text-primary">Código de la cliente</label>
+                </div>
+            </div>
+
+
+            <div class="d-grid gap-2  mt-5">
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a asp-controller="Cliente" asp-action="ListadoCliente" class="btn btn-primary">Atrás</a>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
