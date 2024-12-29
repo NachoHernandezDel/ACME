@@ -1,6 +1,4 @@
-﻿using ACME.Models;
-
-namespace ACME.Models.VM
+﻿namespace ACME.Models.VM
 {
 
     public class ClienteEliminarVM

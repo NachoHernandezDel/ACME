@@ -18,13 +18,18 @@
 
             <div class="mb-3 mt-4">
                 <div class="form-floating mb-4">
-                    <input asp-for="ClienteDto.Nombre" disabled class="form-control"  placeholder="Nombre de la cliente">
-                    <label for="Nombre" class="form-label text-primary">Nombre de la cliente</label>
+                    <input asp-for="ClienteDto.ClienteVisitado" class="form-control" placeholder="Cliente visitado">
+                    <label for="PaytefAPICompany" class="form-label text-primary">Cliente visitado</label>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input asp-for="ClienteDto.Codigo" disabled class="form-control"  placeholder="Código de la cliente">
-                    <label for="Codigo" class="form-label text-primary">Código de la cliente</label>
+                    <input asp-for="ClienteDto.FechaDeVisita" class="form-control" placeholder="Fecha de visita">
+                    <label for="Codigo" class="form-label text-primary">Fecha de visita</label>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <input asp-for="ClienteDto.ComercialResponsable" class="form-control" style="height: 65px;" placeholder="Comercial responsable">
+                    <label for="Nombre" class="form-label text-primary">Comercial responsable</label>
                 </div>
             </div>
 

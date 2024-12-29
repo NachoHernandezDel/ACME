@@ -1,6 +1,4 @@
 using ACME;
-using ACME.Repositorio;
-using ACME.Repositorio.IRepositorio;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 
-builder.Services.AddScoped<IRepositorio, Repositorio>();
+//builder.Services.AddScoped<IRepositorio, Repositorio>();
 
 
 var app = builder.Build();

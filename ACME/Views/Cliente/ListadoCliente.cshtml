@@ -1,35 +1,60 @@
 ﻿@model ACME.Models.VM.ClienteVM
 @{
-    ViewData["Title"] = "Clientes";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Title"] = "Clientes";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <div class="container p-2 border">
-    <div class="row pb-2 ">
-        <div class="col">
-            <h1 class="text-primary">Clientes</h1>
-        </div>
+	<div class="row pb-2 ">
+		<div class="col">
+			<h1 class="text-primary">Clientes</h1>
+		</div>
 
-        <div class="col  pt-1">
-            <a asp-controller="Cliente" asp-action="CrearCliente" class="btn btn-outline-success"><i class="bi bi-plus-square-fill"></i>    Crear cliente</a>
-        </div>
-    </div>
+		<div class="col  pt-1">
+			<a asp-controller="Cliente" asp-action="CrearCliente" class="btn btn-outline-success"><i class="bi bi-plus-square-fill"></i>    Crear cliente</a>
+		</div>
+	</div>
 
 
 
-    @if (Model.listaDeClientes.Count() != 0)
-    {
-        <div id="contenedorConResultado">
-            <div class="table-responsive"><partial name="_TablaClientes" /></div>
+	@if (Model.listaDeClientes.Count() != 0)
+	{
 
-           
-        </div>
-    }
-    else
-    {
-        <h4 class="text-danger text-center">No existen registros.</h4>
-    }
+		<table class="table">
+
+			<thead>
+
+				<tr>
+
+					<th>Cliente visitado</th>
+					<th>Fecha de visita</th>
+					<th>Comercial responsable</th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+				@foreach (var cliente in Model.listaDeClientes)
+				{
+					<tr class="rowData">
+						<td>@cliente.ClienteVisitado</td>
+						<td>@cliente.FechaDeVisita</td>
+						<td>@cliente.ComercialResponsable</td>
+						<td class="text-center">
+							<a asp-controller="Cliente" asp-action="ActualizarCliente" asp-route-clienteId="@cliente.Id" class="btn btn-warning"><i class="bi bi-pencil"></i> </a>
+							<a asp-controller="Cliente" asp-action="EliminarCliente" asp-route-clienteId="@cliente.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i> </a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<h4 class="text-danger text-center">No existen registros.</h4>
+	}
 
 </div>
 

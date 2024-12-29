@@ -17,33 +17,21 @@
             <div class="mb-3 mt-4">
 
                 <div class="form-floating mb-4">
-                    <input asp-for="ClienteCrearDto.Nombre" class="form-control"  placeholder="Nombre de la cliente">
-                    <label for="Nombre" class="form-label text-primary">Nombre de la cliente</label>
-                    <span asp-validation-for="ClienteCrearDto.Nombre" class="text-danger"></span>
+                    <input asp-for="ClienteCrearDto.ClienteVisitado" class="form-control" placeholder="Cliente visitado">
+                    <label for="PaytefAPICompany" class="form-label text-primary">Cliente visitado</label>
+                    <span asp-validation-for="ClienteCrearDto.ClienteVisitado" class="text-danger"></span>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input asp-for="ClienteCrearDto.Codigo" class="form-control"  placeholder="Código de la cliente">
-                    <label for="Codigo" class="form-label text-primary">Código de la cliente</label>
-                    <span asp-validation-for="ClienteCrearDto.Codigo" class="text-danger"></span>
+                    <input asp-for="ClienteCrearDto.FechaDeVisita" class="form-control" placeholder="Fecha de visita">
+                    <label for="Codigo" class="form-label text-primary">Fecha de visita</label>
+                    <span asp-validation-for="ClienteCrearDto.FechaDeVisita" class="text-danger"></span>
                 </div>
 
                 <div class="form-floating mb-4">
-                    <input asp-for="ClienteCrearDto.PaytefAPICompany" class="form-control"  placeholder="Compañía en Paytef">
-                    <label for="PaytefAPICompany" class="form-label text-primary">Compañía en Paytef</label>
-                    <span asp-validation-for="ClienteCrearDto.PaytefAPICompany" class="text-danger"></span>
-                </div>
-
-                <div class="form-floating mb-4">
-                    <input asp-for="ClienteCrearDto.PaytefAPIUsername" class="form-control"  placeholder="Nombre de usuario en Paytef">
-                    <label for="PaytefAPIUsername" class="form-label text-primary">Usuario de Paytef</label>
-                    <span asp-validation-for="ClienteCrearDto.PaytefAPIUsername" class="text-danger"></span>
-                </div>
-
-                <div class="form-floating mb-4">
-                    <input asp-for="ClienteCrearDto.PaytefAPIPassword" type="password" autocomplete="new-password" class="form-control"  placeholder="Contraseña en Paytef">
-                    <label for="PaytefAPIPassword" class="form-label text-primary">Contraseña en Paytef</label>
-                    <span asp-validation-for="ClienteCrearDto.PaytefAPIPassword" class="text-danger"></span>
+                    <input asp-for="ClienteCrearDto.ComercialResponsable" class="form-control" style="height: 65px;" placeholder="Comercial responsable">
+                    <label for="Nombre" class="form-label text-primary">Comercial responsable</label>
+                    <span asp-validation-for="ClienteCrearDto.ComercialResponsable" class="text-danger"></span>
                 </div>
 
             </div>
